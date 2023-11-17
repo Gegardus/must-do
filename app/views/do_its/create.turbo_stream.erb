@@ -1,0 +1,27 @@
+<!-- We’re telling Turbo to prepend to the element with id “do_its” the do_its/do_it partial and its locals. 
+     Then need to add a Turbo Frame with id “do_its” wrapping our list of do-its in the render to_dos/index page. -->
+
+<!--  <%= turbo_stream.prepend "do_its", partial: "do_its/do_it", locals: { do_it: @do_it } %> 
+      or we can refactor our Turbo Stream view using the dom_id help and add a line that  
+      will remove our new to-do frame after submission -->
+
+<%= turbo_stream.prepend "do_its", @do_it %>
+<%= turbo_stream.update DoIt.new, "" %>
+
+<!-- Turbo Strteam other methods are:
+
+turbo_stream.remove
+
+turbo_stream.append
+
+turbo_stream.prepend
+
+turbo_stream.before
+
+turbo_stream.after
+
+turbo_stream.update
+
+turbo_stream.replace
+
+-->

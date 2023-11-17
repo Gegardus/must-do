@@ -1,0 +1,17 @@
+<div class="container"> 
+    <div class="header">
+      <h3 class="text-5xl">DoIts List</h3>
+      <%= link_to "Add +",
+                  new_do_it_path,
+                  data: { turbo_frame: dom_id(DoIt.new) } %>
+    </div>
+
+    <%= turbo_frame_tag DoIt.new %>
+  
+  <ul role="list">
+    <%= turbo_frame_tag "do_its" do %>
+      <%= render @do_its %>
+    <% end %>
+  </ul>
+</div>
+
