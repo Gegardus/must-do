@@ -15,7 +15,7 @@ class DoItsController < ApplicationController
         format.turbo_stream
       end
     else
-      render turbo_stream: turbo_stream.update("errors", partial: "shared/error_messages", locals: { errors: @to_do.errors.full_messages }), status: :unprocessable_entity
+      render turbo_stream: turbo_stream.update("errors", partial: "shared/error_messages", locals: { errors: @do_it.errors.full_messages }), status: :unprocessable_entity
     end
   end
 
@@ -48,3 +48,4 @@ class DoItsController < ApplicationController
     params.require(:do_it).permit(:title)
   end
 end
+

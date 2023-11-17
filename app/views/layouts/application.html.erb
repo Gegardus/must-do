@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <main class="container mt-40 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col justify-center items-center">
+      <div><%= yield %></div>
+      <div><%= turbo_frame_tag "modal" %></div>
     </main>
   </body>
 </html>
